@@ -218,3 +218,23 @@ document.addEventListener("click", function (a) {
 			document.getElementById("memoryDisplay2").innerText;
 	}
 });
+//time
+window.addEventListener("load", function () {
+	this.setInterval(function () {
+		var today = new Date();
+		var hour = today.getHours();
+		var seconds = today.getSeconds();
+		var minutes = today.getMinutes();
+		if (hour < 10) {
+			hour = "0" + hour;
+		}
+		if (minutes < 10) {
+			minutes = "0" + minutes;
+		}
+		if (seconds < 10) {
+			seconds = "0" + seconds;
+		}
+		document.getElementById("time1").innerText =
+			hour + ":" + minutes + ":" + seconds;
+	});
+});

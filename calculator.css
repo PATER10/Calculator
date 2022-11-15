@@ -110,3 +110,18 @@ button:hover {
 	margin-right: 20px;
 	font-size: large;
 }
+#time {
+	display: flex;
+	position: absolute;
+	top: 2vh;
+	right: 5vh;
+	font-size: 35px;
+	color: white;
+	min-width: 200px;
+	min-height: 50px;
+	background-color: rgb(73, 70, 70);
+	justify-content: center;
+}
+span {
+	align-self: center;
+}
