@@ -125,3 +125,10 @@ button:hover {
 span {
 	align-self: center;
 }
+#linkGithub {
+	text-decoration: none;
+	color: white;
+}
+#linkGithub:hover {
+	color: lightgrey;
+}
