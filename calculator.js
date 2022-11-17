@@ -25,6 +25,9 @@ document.addEventListener("click", function (a) {
 
 	//show dot
 	if (a.target.classList.contains("dot")) {
+		if (document.getElementById("result").innerText === "Error") {
+			return 0;
+		}
 		if (resultEnd === true) {
 			document.getElementById("calculations").innerText =
 				document.getElementById("result").innerText;
@@ -43,6 +46,9 @@ document.addEventListener("click", function (a) {
 
 	//show operator
 	if (a.target.classList.contains("operator")) {
+		if (document.getElementById("result").innerText === "Error") {
+			return 0;
+		}
 		if (document.getElementById("calculations").innerText === "-") {
 			return 0;
 		}
@@ -75,6 +81,15 @@ document.addEventListener("click", function (a) {
 	// show equal
 	if (a.target.classList.contains("equals")) {
 		if (
+			document.getElementById("result").innerText &&
+			document.getElementById("calculations").innerText === ""
+		) {
+			return document.getElementById("result").innerText;
+		}
+		if (document.getElementById("result").innerText === "Error") {
+			return 0;
+		}
+		if (
 			document.getElementById("calculations").innerText === "" &&
 			document.getElementById("result").innerText === ""
 		) {
@@ -94,6 +109,9 @@ document.addEventListener("click", function (a) {
 
 	//square root of numbers
 	if (a.target.classList.contains("sqr")) {
+		if (document.getElementById("result").innerText === "Error") {
+			return 0;
+		}
 		if (
 			parseInt(eval(document.getElementById("calculations").innerText)) <
 			parseInt(0)
@@ -114,6 +132,9 @@ document.addEventListener("click", function (a) {
 			var result = Math.sqrt(document.getElementById("result").innerText);
 		}
 		document.getElementById("result").innerText = result;
+		if (document.getElementById("result").innerText === "Infinity") {
+			document.getElementById("result").innerText = "Error";
+		}
 		resultEnd = true;
 	}
 
@@ -142,6 +163,10 @@ document.addEventListener("click", function (a) {
 	//add memory
 	if (a.target.classList.contains("addMemory")) {
 		memoryDisplay = true;
+		if (eval(document.getElementById("calculations").innerText) === Infinity) {
+			memoryDisplay = false;
+			return 0;
+		}
 		if (memoryDisplay === true) {
 			if (document.getElementById("display").innerText === "") {
 				memoryDisplay = false;

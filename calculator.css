@@ -3,6 +3,7 @@ body {
 	width: 100%;
 	height: 100vh;
 	background: linear-gradient(to right bottom, black, white);
+	background-attachment: fixed;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -95,20 +96,22 @@ button:hover {
 	margin-bottom: 10px;
 }
 #footer {
+	display: flex;
+	justify-content: flex-end;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 4vh;
+	height: auto;
 	background-color: rgb(168, 168, 168);
 	color: white;
 	text-align: right;
 }
 #footerText {
 	position: relative;
-	top: 0.5vh;
-	margin-top: 5px;
-	margin-right: 20px;
 	font-size: large;
+	align-self: center;
+	margin: 0.3%;
+	margin-right: 2%;
 }
 #time {
 	display: flex;
